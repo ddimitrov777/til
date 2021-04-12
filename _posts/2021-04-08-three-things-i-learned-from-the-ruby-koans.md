@@ -30,7 +30,7 @@ end
 * Begin rescue ensure end.... Rescue from an error exception... Ensure a code happenps no matter what
 * .each is a prebuilt method in the Array class
 * The use of blocks
-e.g. two ways to do the same thing
+e.g. two ways to do the same thing... the {*some stuff*} is essentially synonymous with a **do** *some stuff* **end** encapuslation
 
 ~~~~
 array.each do |item|
@@ -43,4 +43,40 @@ Vs
 ~~~~
 array.each { |item| sum += item }
 ~~~~
+
+* Instead of .each, we can use other methods... like .collect or .map
+  * .collect / .map transforms the elements in the array
+~~~~
+array = [1, 2, 3]
+    new_array = array.collect { |item| item + 10 }
+    assert_equal [11, 12, 13], new_array
+~~~~ 
+
+* We can also use .select /.find_all procedure
+e.g. if we want to select all even numbers from within an array:
+
+~~~~
+array = [1, 2, 3, 4, 5, 6]
+even_numbers = array.select { |item| (item % 2) == 0 }
+
+#even_numbers now returns [2, 4, 6]
+
+~~~~
+* In this vein, .find will return the first matching instance
+*  .inject/.reduce method... what you put in the paranthesis is the starting value for the sum/product/etc. These methods allow you to do a sequential procedure where you start with the first item, relate it to the second item (typically aggregating them in some way)... take this new combination/aggregation and relate it to the next item in the list... etc.
+
+A creative way to use .inject could be to build a hash
+~~~~
+
+[[:student, "Terrance Koar"], [:course, "Web Dev"]].inject({}) do |result, element| 
+    result[element.first] = element.last 
+    result
+end
+#=> {:student=>"Terrance Koar", :course=>"Web Dev"}
+
+~~~~
+
+(you could also change the datatype and do other operations in there, such as having element.first.to_s in the aboe example)
+
+
 
