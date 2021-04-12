@@ -78,5 +78,19 @@ end
 
 (you could also change the datatype and do other operations in there, such as having element.first.to_s in the aboe example)
 
+* The ampersand (&) sign can be used as syntactic sugar for blocks
+~~~~
+method { |param| param.some_method }
+
+#can be written as
+
+method &.some_method
+
+#or 
+
+method(&.some_method)
+
+
+~~~~
 
 
