@@ -81,6 +81,7 @@ end
 (you could also change the datatype and do other operations in there, such as having element.first.to_s in the aboe example)
 
 * The ampersand (&) sign can be used as syntactic sugar for blocks
+
 ~~~~
 method { |param| param.some_method }
 
@@ -94,12 +95,16 @@ method(&.some_method)
 
 ~~~~
 
+
+
 * There are some more block arguments and methods to go back to... e.g. using yield, lambda, .call, et
 * There is an instance_variables method to fetch instance variables associated with the class you've specified.
 * Instead of calling a method name by .method_name, you could also use the .send(:method_name) syntax, which allows dynamic changing of method names
 * def end encapsulations can be thought of as funcitons you can call or purely as code dividers to delineate different sections
 * Use def **initialize**(arg1, arg2) to create Objects that require arguments... 
 e.g. like if you have a point object
+
+
 ~~~~
 class Point
   def initialize(x, y)
