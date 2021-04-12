@@ -117,7 +117,8 @@ end
 #In this example, you may want to store the arguments into instance variables
 ~~~~
 
-* A class is like a category of being… it doesn’t become an object until you have .new you make a new object from the category of being
+* A class is like a category of being… it doesn’t become an object until you have .new 
+You make a new object from the category of being
 Class is blueprint, object is product
 
 * Alternative array notation of  **%w()**
