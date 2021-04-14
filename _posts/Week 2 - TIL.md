@@ -9,6 +9,7 @@ title: Things I learned from Week 2
 * .each_line, split string that has multiple line into array of stirngs separated by lines (and then you can enumerate
 ```
 #different options
+
 "hello\nworld".each_split{|s| p s}
 "hello\nworld".each_split(chomp: true) {|s| p s}
 ```
