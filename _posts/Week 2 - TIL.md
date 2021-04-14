@@ -8,19 +8,33 @@ title: Things I learned from Week 2
 * Ruby each_slice enumerable method (to split array into arrays)
 * .each_line, split string that has multiple line into array of stirngs separated by lines (and then you can enumerate
 ```
-#different optios
+#different options
 "hello\nworld".each_split{|s| p s}
 "hello\nworld".each_split(chomp: true) {|s| p s}
 ```
-* Enumerators…
+* Enumerators
 We call an object “enumerable” when it describes a set of items and a method to loop over each of them
 
 Enumeration traverses over objects
+If you supply an enumerable (like an .each) without a subsequent block, then you get the Enumerator Object... You can assign that object to a variable and then do somethings with that Object.
+e.g.
+
+```
+enum = "hello".each_char
+enum.map &:upcase
+
+# ==>.  ["H","E","L","L",O"]
+
+
+```
 
 * How to make attr_reader and accessor work with question mark methods?
 Use alias_method
+```
+attr_reader :server_error
+alias_method :server_error?, :server_error
+```
 
-￼
 
 * From isogram… Approach for string functions… eliminate excess/non-useful variation… we do downcase since we don’t care about case (to standardize and eliminate case variation)… 
 * .chars splits a string into an array of chars
