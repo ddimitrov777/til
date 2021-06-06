@@ -1,0 +1,46 @@
+
+
+
+* Use .try to check if it’s a nil (i.e. to avoid an error related to nil… I ran into this when using .strftime on a date time that was nil)
+* In application.js file, put your activity trigger 
+$(document).on('click', '#open-test-data-directory', function() {
+  $.ajax({
+  method: "GET",
+  url: "/fire_ajax"
+})
+
+* JavaScript using.on instead of .live (which was replaced)
+* 
+$(‘body’).on(‘event_name’, ‘CSS_selector’, function_do_stuff)
+
+‘Body’ can be any parent element
+* Remember the method Object.entries(your_object) to access all of your object’s key-value pairs
+* Reminder that in form helper for rails…. The name=“” HTML output has to result in “model_name[attr_name]”
+* Add hours to your DateTime object with + 5.hour
+* Learned about CSS flex-boxes… and also CSS grid… they are different display properties, which then have different features.
+* TurboLinks does jQuery where it replaces <body>… this means that for your other jQuery you need to do on turbo links land instead of $(document).ready
+$(document).on('turbolinks:load', function() {
+  console.log("It works on each visit!")
+})
+* Sprockets vs web pack.. different style tags and notations
+* Web pack install
+    * https://edgeguides.rubyonrails.org/webpacker.html
+* <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>  is a helper method from web pack… looks for apps/javascript/packs/application.js file and loads it
+* stylesheet_pack_tag requires application CSS file in the packs
+* Bootstrap utilities show you the shortcuts for things like mb-4 
+* To get nicely formatted error message… use model level validation
+e.g.
+validates :date, presence: true
+As opposed to just database level constraint
+* .join and .merge to get List of records that fulfill certain association criteria… does an intersection of table.
+    * e.g. I used this to get show all studios that the current user is employed at
+* Can make separate JS files in /packs…. (e.g. my_js.js) And then in the view template, call them with <%= javascript_pack_tag 'my_js' %>
+* Rails unobtrusive JS gives you nice helpers
+* Javascript get today’s date without time
+var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+document.write(today);
+* If Pundit is returning Nil Policy, try restarting your server…
+
+* rake red (assuming erd gem is installed) to generate pdf of entity resources diagram
